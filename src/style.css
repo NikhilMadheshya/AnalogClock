@@ -1,0 +1,143 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+}
+
+#root
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    width: 100%;
+    background:coral;
+}
+
+#root h1
+{
+    color:#fff;
+    font-size: 4em;
+}
+.clock
+{
+    width: 300px;
+    height: 300px;
+    background:#fff;
+    display:flex;
+    border-radius:50%;
+    position: relative;
+    box-sizing: border-box;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('./clock2.png');
+    background-position: center;
+    background-size: 85%;
+    background-repeat: no-repeat;
+    margin-top:50px;
+}
+
+
+
+
+
+.clock::after
+{
+    content:'';
+    position: absolute;
+    height: 105%;
+    width: 105%;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    border: 20px solid lightyellow;
+    box-sizing: border-box;
+    border-radius: 50%;
+    box-shadow: inset 0 0 2px rgba(0,0,0,.5),0 0 4px rgba(0,0,0.5);
+   
+   
+
+}
+
+.clock .digital
+{
+display: flex;
+margin-bottom: 80px;
+background: lightyellow;
+height: 30px;
+width: 80px;
+justify-content: center;
+line-height: 30px;
+align-items: center;
+font-size: 1.2em;
+box-sizing: border-box;
+border:4px solid #fff;
+box-shadow: inset 0 0 2px rgba(0,0,0,.5);
+color:#333;
+}
+
+@media screen and (max-width:350px)
+{
+    .clock
+    {
+        width: 250px;
+        height: 250px;
+    }
+    .clock .digital
+    {
+        margin-bottom: 60px;
+    }
+
+}
+.clock .digital p{
+    font-weight: 600;
+   
+}
+.clock .digital #hour
+{
+    color:orangered;
+}
+
+.clock .node
+{
+    background:#000;
+    position:absolute;
+    height: 25px;
+    width: 25px;
+    top:calc(50% - 12.5px); left:calc(50% - 12.5px);
+    border-radius: 50%;
+
+}
+.clock .hour
+{
+    height:15%;
+    width: 4px;
+    background:coral;
+    position:absolute;
+    top:35%; left:calc(50% - 2px);
+    transform-origin: bottom;
+    border-radius: 3px 3px 0 0;
+}
+
+.clock .minute
+{
+    height:25%;
+    width: 4px;
+    background:#111;
+    position:absolute;
+    top:25%; left:calc(50% - 2px);
+    transform-origin: bottom;
+    border-radius: 3px 3px 0 0;
+}
+.clock .second
+{
+    height:30%;
+    width: 4px;
+    background:#444;
+    position:absolute;
+    top:20%; left:calc(50% - 2px);
+    transform-origin: bottom;
+    border-radius: 3px 3px 0 0;
+}
